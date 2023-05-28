@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <header>
+        <a class="logo" href="#"> Md Moinuddin </a>
+        <a class="nav-link" href="#"> Data Science Project </a>
+        <a class="button" href="#">Live Together, Teach Together , Growth With To Each Other</a>
+    </header>
+<h2><center>CUSTOMER CHURN PREDICTION</center></h2>
+<form action="/" method="POST">
+    <fieldset>
+        <center>
+                 <div class="form">
+                     <label for="Dependents">Dependents:</label><br>
+                     <input  type="text" name="Dependents" id="Dependents" value="" ><br>
+
+                     <label for="tenure">tenure:</label><br>
+                     <input type="number" name="tenure" id="tenure" value=""/><br>
+
+                     <label for="OnlineSecurity"> OnlineSecurity:</label><br>
+                     <input type="text" name="OnlineSecurity" id="OnlineSecurity" value=""><br>
+
+                     <label for="OnlineBackup">OnlineBackup:</label><br>
+                     <input type="text" name="OnlineBackup" id="OnlineBackup" value=""><br>
+
+
+                     <label for="DeviceProtection">DeviceProtection:</label><br>
+                     <input  type="text" name="DeviceProtection" id="DeviceProtection" value=""><br>
+                 </div>
+                 <div class="form">
+                     <label for="TechSupport">TechSupport:</label><br>
+                     <input  type="text" name="TechSupport" id="TechSupport" value=""><br>
+
+                     <label for="Contract">Contract:</label><br>
+                     <input type="text" name="Contract" id="Contract" value=""><br>
+
+                     <label for="PaperlessBilling">PaperlessBilling:</label><br>
+                     <input  type="text" name="PaperlessBilling" id="PaperlessBilling" value=""><br>
+
+                     <label for="MonthlyCharges">MonthlyCharges:</label><br>
+                     <input type="text" name="MonthlyCharges" id="MonthlyCharges" value=""><br>
+
+                     <label for="TotalCharges">TotalCharges:</label><br>
+                     <input type="text" name="TotalCharges" id="TotalCharges" value=""><br>
+                 </div>
+
+                 <div class="col-sm-3">
+                     <button style="background-color:red;border-color:powderblue;color:white;margin-top:40px;" type="submit" class="btn btn-primary" name="submit">SUBMIT</button>
+			     </div>
+    </center>
+    </fieldset>
+
+</form>
+
+<div class="form-output">
+    <center>
+            <h3>Prediction</h3>
+        <output> <strong>{{op1}}</strong></output><br><output><strong>{{op2}}</strong></output>
+    </center>
+</div>
+</body>
+</html>
