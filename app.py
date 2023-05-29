@@ -6,13 +6,14 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def home_page():
     return render_template('home.html')
 
+
 @app.route("/", methods=['POST'])
 def predict():
-
     """ Selected feature are Dependents, tenure, OnlineSecurity,
         OnlineBackup, DeviceProtection, TechSupport, Contract,
         PaperlessBilling, MonthlyCharges, TotalCharges """
@@ -29,10 +30,12 @@ def predict():
     TotalCharges = float(request.form['TotalCharges'])
 
     model = pickle.load(open('Model.sav', 'rb'))
-    data = [[Dependents, tenure, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, Contract, PaperlessBilling, MonthlyCharges, TotalCharges]]
+    data = [
+        [Dependents, tenure, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, Contract, PaperlessBilling,
+         MonthlyCharges, TotalCharges]]
     df = pd.DataFrame(data, columns=['Dependents', 'tenure', 'OnlineSecurity',
-        'OnlineBackup', 'DeviceProtection', 'TechSupport', 'Contract',
-        'PaperlessBilling', 'MonthlyCharges', 'TotalCharges'])
+                                     'OnlineBackup', 'DeviceProtection', 'TechSupport', 'Contract',
+                                     'PaperlessBilling', 'MonthlyCharges', 'TotalCharges'])
 
     categorical_feature = {feature for feature in df.columns if df[feature].dtypes == 'O'}
 
@@ -42,7 +45,7 @@ def predict():
 
     single = model.predict(df)
     probability = model.predict_proba(df)[:, 1]
-    probability = probability*100
+    probability = probability * 100
 
     if single == 1:
         op1 = "This Customer is likely to be Churned!"
