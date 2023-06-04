@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import sklearn
 from sklearn.preprocessing import LabelEncoder
 import pickle
 from flask import Flask, request, render_template
